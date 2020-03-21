@@ -1,6 +1,6 @@
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.altea.miaga</groupId>
+    <groupId>com.altea.miage</groupId>
     <artifactId>altea-2019-2020-starter</artifactId>
     <version>0.1.0</version>
     <packaging>jar</packaging>
@@ -26,6 +26,13 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.10</version>
+            <scope>provided</scope>
         </dependency>
 
     </dependencies>
