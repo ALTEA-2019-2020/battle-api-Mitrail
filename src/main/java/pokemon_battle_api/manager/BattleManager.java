@@ -54,11 +54,11 @@ public class BattleManager {
         return pokemon;
     }
 
-    private static Integer calcRealStats(Integer baseStat, Integer level) {
+    public static Integer calcRealStats(Integer baseStat, Integer level) {
         return 5 + (baseStat * (level / 50));
     }
 
-    private static Integer calcRealHp(Integer hp, Integer level) {
+    public static Integer calcRealHp(Integer hp, Integer level) {
         return 10 + level + (hp * (level / 50));
     }
 

@@ -27,7 +27,6 @@ public class TrainerService {
     }
 
     public Trainer getTrainers(String name) {
-        return Objects.requireNonNull
-                (restTemplate.getForObject(trainerApiUrl + "/trainers/"+name, Trainer.class));
+        return restTemplate.getForObject(trainerApiUrl + "/trainers/"+name, Trainer.class);
     }
 }

@@ -27,11 +27,10 @@ public class PokemonTypeService {
 
     @Cacheable("pokemon-types")
     public PokemonType pokemon(long id) {
-        return Objects.requireNonNull
-                (restTemplate.exchange(pokemonServiceUrl + "/pokemon-types/" + id, HttpMethod.GET, this.getHttpEntity(), PokemonType.class)).getBody();
+        return restTemplate.exchange(pokemonServiceUrl + "/pokemon-types/" + id, HttpMethod.GET, this.getHttpEntity(), PokemonType.class).getBody();
     }
 
-    private HttpEntity getHttpEntity() {
+    public HttpEntity getHttpEntity() {
         HttpHeaders headers = new HttpHeaders();
         headers.setAcceptLanguageAsLocales(Collections.singletonList(LocaleContextHolder.getLocale()));
         return new HttpEntity<>("body", headers);
