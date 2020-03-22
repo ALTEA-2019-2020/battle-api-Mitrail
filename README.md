@@ -3,8 +3,11 @@ Ce projet contient l'API battle-api permettant la création et l'execution de co
 L'API présente 4 routes :
 
 GET  /battles
+
 GET  /battles/{uuid}
+
 POST /battles
+
 POST /battles/{uuid}/{trainerName}/attack
 
 Les tests de ces routes sont disponibles dans la collection postman battle-api.postman_collection.json.
