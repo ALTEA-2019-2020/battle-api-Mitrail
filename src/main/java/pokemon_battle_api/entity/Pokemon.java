@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class Pokemon {
-    private PokemonType pokemonType;
+    private PokemonType type;
     private int level;
     private int pokemonTypeId;
 
@@ -12,6 +12,7 @@ public class Pokemon {
     private Integer defense;
     private Integer attack;
     private Integer hp;
+    private Integer maxHp;
 
     private boolean ko = false;
     private boolean alive = true;

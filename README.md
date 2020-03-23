@@ -6,7 +6,7 @@ GET  /battles
 
 GET  /battles/{uuid}
 
-POST /battles
+POST /battles?trainer={trainer}&opponent={opponent}
 
 POST /battles/{uuid}/{trainerName}/attack
 

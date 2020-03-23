@@ -1,8 +1,9 @@
 package pokemon_battle_api.controller;
 
 import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import pokemon_battle_api.dto.BattleDto;
 import pokemon_battle_api.entity.Battle;
 import pokemon_battle_api.exception.BusinessException;
 import pokemon_battle_api.manager.BattleManager;
@@ -31,8 +32,10 @@ public class BattleController {
     }
 
     @PostMapping
-    public UUID setNewBattle(@RequestBody BattleDto battleDto) {
-        return battleManager.createBattle(trainerPokemonService.getTrainers(battleDto.getTrainer()), trainerPokemonService.getTrainers(battleDto.getOpponent()));
+    public ResponseEntity<Battle> setNewBattleFromParam(@RequestParam String trainer, @RequestParam String opponent) {
+        UUID uuid = battleManager.createBattle(trainerPokemonService.getTrainers(trainer), trainerPokemonService.getTrainers(opponent));
+        Battle battle = battleManager.getBattleState(uuid);
+        return new ResponseEntity<>(battle, HttpStatus.CREATED);
     }
 
     @PostMapping("/{uuid}/{trainerName}/attack")

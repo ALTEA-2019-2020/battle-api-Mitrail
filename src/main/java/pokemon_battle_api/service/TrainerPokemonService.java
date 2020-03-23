@@ -16,7 +16,7 @@ public class TrainerPokemonService {
         Trainer trainer = this.trainerService.getTrainers(name);
         trainer.getTeam().forEach(pokemon -> {
             PokemonType pokemonType = pokemonTypeService.pokemon(pokemon.getPokemonTypeId());
-            pokemon.setPokemonType(pokemonType);
+            pokemon.setType(pokemonType);
         });
         return trainer;
     }

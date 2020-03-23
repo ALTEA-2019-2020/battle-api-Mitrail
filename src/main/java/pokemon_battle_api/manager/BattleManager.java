@@ -44,8 +44,8 @@ public class BattleManager {
 
     public static Pokemon getPokemonWithStats(Pokemon pokemon) {
         Integer level = pokemon.getLevel();
-        Stats defaultStats = pokemon.getPokemonType().getStats();
-
+        Stats defaultStats = pokemon.getType().getStats();
+        pokemon.setMaxHp(calcRealHp(defaultStats.getHp(), level));
         pokemon.setHp(calcRealHp(defaultStats.getHp(), level));
         pokemon.setAttack(calcRealStats(defaultStats.getAttack(), level));
         pokemon.setDefense(calcRealStats(defaultStats.getDefense(), level));
@@ -80,6 +80,9 @@ public class BattleManager {
 
         Integer hpToLose = (((2 * lvlAttacker / 5) + (2 * (powerAttack / powerDefense))) + 2);
         pokemonDefender.setHp(hpDefender - hpToLose);
+
+        attacker.setNextTurn(false);
+        defender.setNextTurn(true);
 
         if (pokemonDefender.getHp() < 0) {
             pokemonDefender.setKo(true);

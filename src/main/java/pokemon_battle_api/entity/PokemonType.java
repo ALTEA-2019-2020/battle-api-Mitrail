@@ -13,4 +13,5 @@ public class PokemonType {
     private Stats stats;
     private int weight;
     private List<String> types;
+    private Sprites sprites;
 }

@@ -10,17 +10,8 @@
 			"request": {
 				"method": "POST",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"trainer\": \"Ash\",\n\t\"opponent\": \"Misty\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "http://localhost:9003/battles",
+					"raw": "http://localhost:9003/battles?trainer=Ash&opponent=Misty",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -28,6 +19,16 @@
 					"port": "9003",
 					"path": [
 						"battles"
+					],
+					"query": [
+						{
+							"key": "trainer",
+							"value": "Ash"
+						},
+						{
+							"key": "opponent",
+							"value": "Misty"
+						}
 					]
 				}
 			},
